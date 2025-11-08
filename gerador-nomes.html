@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Nomes Criativos | NomeCraft</title>
+  <meta name="description" content="Gera nomes únicos e criativos para TikTok, Instagram, YouTube e jogos em segundos!">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/gerador-nomes.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="gerador-nomes.html" class="active">Gerador de Nomes</a>
+        <a href="gerador-bios.html">Gerador de Bios</a>
+        <a href="dicas.html">Dicas</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+    </header>
+
+    <section class="hero card">
+      <h1>Gerador de Nomes Criativos</h1>
+      <p>Encontra o nome perfeito para o teu perfil ou canal em segundos!</p>
+    </section>
+
+    <section class="card tool">
+      <label for="tema">Tema / Categoria</label>
+      <input type="text" id="tema" placeholder="Ex: futebol, moda, humor">
+      <button class="cta" id="gerarNome">Gerar Nome</button>
+      <div id="resultado" class="result"></div>
+    </section>
+
+    <section id="ads">
+      <iframe src="ads/monetag.html" loading="lazy"></iframe>
+    </section>
+
+    <footer>
+      © <span id="year"></span> NomeCraft. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

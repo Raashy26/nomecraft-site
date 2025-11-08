@@ -1,0 +1,26 @@
+{
+  "tiktok": [
+    "DanceVibe", "TrendSpin", "NeoGroove", "FunFlow", "SpinMaster", "VibeZone",
+    "CrazyMove", "TikFusion", "LunaBeat", "GlowStep", "FlexDance", "RhythmX"
+  ],
+  "instagram": [
+    "InstaStyle", "GramSnap", "PhotoFrame", "PixTrend", "VisualVibe",
+    "SnapStory", "DailyGram", "InstaMood", "PixelArt", "StyleGram", "FrameIt", "ChicPix"
+  ],
+  "gamer": [
+    "XFrag", "ProClash", "ShadowBlade", "GhostStrike", "NovaStorm",
+    "CyberArc", "VexZone", "LunaShot", "DarkKnight", "PixelWar", "BladeX", "StormChaser"
+  ],
+  "loja": [
+    "ShopMart", "StoreHub", "TrendShop", "ClickMart", "NovaStore",
+    "PixelShop", "UrbanMart", "GlowStore", "ShopZone", "StyleMart", "VibeStore", "MarketPro"
+  ],
+  "misterioso": [
+    "DarkVoid", "CrypticArc", "AbyssShadow", "MysticFlow", "NightWhisper",
+    "HiddenRealm", "VoidStorm", "EclipseX", "PhantomNova", "SecretInk", "Obscura", "ChillMyst"
+  ],
+  "geral": [
+    "NeoVibe", "LunaX", "PixelStorm", "GlowNova", "VibeArc",
+    "MysticFlow", "SpinBlade", "FlexPro", "ChillZone", "DarkSpark"
+  ]
+}

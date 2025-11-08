@@ -1,0 +1,177 @@
+:root {
+  --accent: #ff4757;
+  --bg: #0f1720;
+  --card: #0b1220;
+  --text: #e6eef6;
+  --subtext: #9fb3c7;
+  --shadow: rgba(0,0,0,0.25);
+  font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(180deg,#071021 0%,#081425 100%);
+  color: var(--text);
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+/* Wrapper */
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#ff7a7a,#ffbaba);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 16px;
+  transition: 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+}
+
+/* Hero sections */
+.hero {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.hero h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: var(--subtext);
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px var(--shadow);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.02);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* Links in cards */
+.link-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.link-card:hover {
+  background: rgba(255,255,255,0.07);
+  transform: scale(1.03);
+}
+
+/* Buttons */
+button.cta {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.cta:hover {
+  background: #ff6b4f;
+  transform: translateY(-1px);
+}
+
+/* Result boxes */
+.result, .resultado {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break: break-word;
+}
+
+/* Small text */
+.small {
+  font-size: 13px;
+  color: var(--subtext);
+  margin-top: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: var(--subtext);
+}
+
+/* Viral tool section */
+.viral-tool {
+  margin-top: 20px;
+  padding: 18px;
+}
+
+.viral-tool h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.viral-tool p {
+  font-size: 14px;
+  color: var(--subtext);
+  margin-bottom: 12px;
+}
+
+/* Responsive tweaks */
+@media(max-width: 720px) {
+  header { flex-direction: column; align-items: flex-start; }
+  nav { margin-top: 8px; }
+}

@@ -3,226 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gerador de Nomes & Bios — NomeMaster</title>
-  <meta name="description" content="Gera nomes criativos para TikTok, Instagram, gamers e bios perfeitas. Rápido, grátis e divertido!" />
-  <!-- Monetag placeholder - substitui pelo snippet Monetag -->
-  <!-- MONETAG_SNIPPET_HERE -->
-  <style>
-    :root{--accent:#ff4757;--bg:#0f1720;--card:#0b1220;color:#e6eef6;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071021 0%,#081425 100%);color:var(--card);font-family:inherit}
-    .wrap{max-width:980px;margin:18px auto;padding:18px}
-    header{display:flex;align-items:center;gap:12px}
-    header h1{margin:0;font-size:20px}
-    .hero{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;margin:12px 0}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media(max-width:720px){.grid{grid-template-columns:1fr}}
-    .card{background:#07121c;padding:14px;border-radius:10px}
-    label{display:block;font-size:13px;color:#9fb3c7;margin-bottom:6px}
-    select,input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px}
-    button.cta{background:var(--accent);color:white;border:0;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;width:100%}
-    .result{margin-top:10px;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .result .text{font-size:16px;word-break:break-word}
-    .small{font-size:12px;color:#9fb3c7}
-    .share{display:flex;gap:8px}
-    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02)}
-    footer{margin:18px 0;color:#9fb3c7;font-size:13px;text-align:center}
-  </style>
+  <title>NomeCraft — Gerador de Nomes e Bios Criativos</title>
+  <meta name="description" content="Gera nomes criativos para TikTok, Instagram, jogos e bios perfeitas. Ferramenta gratuita e divertida!">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <img src="" alt="" style="width:44px;height:44px;border-radius:8px;background:linear-gradient(90deg,#ff7a7a,#ffbaba)" />
-      <h1>NomeMaster — Gerador de Nomes & Bios</h1>
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="gerador-nomes.html">Gerador de Nomes</a>
+        <a href="gerador-bios.html">Gerador de Bios</a>
+        <a href="dicas.html">Dicas & Frases</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
     </header>
 
     <section class="hero card">
-      <p style="margin:0;font-size:15px">Gera nomes criativos para TikTok, Instagram, gamertags, lojas e muito mais. Rápido, grátis — e divertido 😎</p>
-      <div style="margin-top:12px" class="small">Dica: usa o botão "Gerar" e partilha o resultado no TikTok (link na bio)</div>
+      <h1>NomeCraft 🔥</h1>
+      <p>Gera nomes e bios únicas para TikTok, Instagram, gamers e muito mais. Tudo grátis, rápido e divertido 😎</p>
+      <div class="small">Dica: usa o botão “Gerar” e partilha o resultado nos teus vídeos TikTok!</div>
     </section>
 
-    <div class="grid">
-      <!-- Gerador de Nomes -->
-      <div class="card">
-        <h3 style="margin-top:0">Gerador de Nomes</h3>
-        <label for="category">Categoria</label>
-        <select id="category">
-          <option value="tiktok">TikTok / Reels</option>
-          <option value="instagram">Instagram</option>
-          <option value="gamer">Gamer / Clã</option>
-          <option value="loja">Loja / Marca</option>
-          <option value="misterioso">Misterioso / Dark</option>
-        </select>
-        <label for="tone">Tom</label>
-        <select id="tone">
-          <option value="cool">Cool</option>
-          <option value="funny">Engraçado</option>
-          <option value="cute">Fofo</option>
-          <option value="pro">Profissional</option>
-        </select>
-        <label for="length">Preferência de comprimento</label>
-        <select id="length">
-          <option value="short">Curto (1-2 palavras)</option>
-          <option value="medium">Médio (2-3 palavras)</option>
-          <option value="long">Longo (3+ palavras)</option>
-        </select>
-
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <button id="genName" class="cta">Gerar Nome</button>
-        </div>
-
-        <div id="nameResult" class="result" style="display:none">
-          <div class="text" id="nameText"></div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <button class="chip" id="copyName">Copiar</button>
-            <div class="chip" id="shareName">Partilhar</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Gerador de Bios -->
-      <div class="card">
-        <h3 style="margin-top:0">Gerador de Bios & Frases</h3>
-        <label for="bioTheme">Tema</label>
-        <select id="bioTheme">
-          <option value="followers">Ganhar Seguidores</option>
-          <option value="romantic">Romântico</option>
-          <option value="funny">Engraçado</option>
-          <option value="pro">Profissional / Portfolio</option>
-        </select>
-        <label for="bioEmojis">Incluir emojis?</label>
-        <select id="bioEmojis">
-          <option value="yes">Sim</option>
-          <option value="no">Não</option>
-        </select>
-
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <button id="genBio" class="cta">Gerar Bio</button>
-        </div>
-
-        <div id="bioResult" class="result" style="display:none">
-          <div class="text" id="bioText"></div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <button class="chip" id="copyBio">Copiar</button>
-            <div class="chip" id="shareBio">Partilhar</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <section style="margin-top:14px" class="card">
-      <h4 style="margin:0 0 8px 0">Porquê isto funciona?</h4>
-      <ul style="margin:0 0 0 18px;padding:0;color:#9fb3c7">
-        <li>Ferramentas rápidas geram tráfego repetido.</li>
-        <li>Botões grandes = interações móveis = mais cliques em anúncios Monetag.</li>
-        <li>Fácil de promover no TikTok / Instagram.</li>
-      </ul>
+    <section class="grid">
+      <a href="gerador-nomes.html" class="card link-card">🎯 Gerador de Nomes</a>
+      <a href="gerador-bios.html" class="card link-card">💬 Gerador de Bios</a>
+      <a href="dicas.html" class="card link-card">📈 Dicas e Frases Virais</a>
+      <a href="sobre.html" class="card link-card">ℹ️ Sobre o Projeto</a>
     </section>
 
     <footer>
-      © <span id="year"></span> NomeMaster • Política de Privacidade • Termos
+      © <span id="year"></span> NomeCraft • <a href="#">Política</a> • <a href="#">Termos</a>
     </footer>
   </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple local generator logic (replaceable by AI or DB)
-    const syllables = ["neo","x","ka","zo","ri","do","vex","kai","oro","luna","sky","storm","bite","/","pro","mobi","flux","arc","nova","ink","chill"];
-    const adjectives = {cool:["vibe","ghost","shadow","blade"], funny:["taco","banana","panda","loco"], cute:["bunny","cookie","mimi","candy"], pro:["studio","lab","works","pro"]};
-    const prefixes = {tiktok:["dance","vibe","trend","spin"], instagram:["gram","style","snap","frame"], gamer:["x","pro","clan","frag"], loja:["shop","store","mart"], misterioso:["dark","void","crypt","abyss"]};
-    const bios = {
-      followers: ["Creator • Love to make people smile 😊", "Posting daily hacks & memes", "Turn followers into friends"],
-      romantic: ["Living for sunsets and long talks", "Heart open, coffee ready", "Chasing love & good vibes"],
-      funny: ["Professional meme curator", "Laughs for free", "I put the 'pro' in procrastinate"],
-      pro: ["Designer • Builder • Maker", "Portfolio: link below", "Crafting digital experiences"]
-    };
-
-    function random(arr){return arr[Math.floor(Math.random()*arr.length)]}
-    function buildName(opts){
-      const pre = prefixes[opts.category] || ["meta","neo","ultra"];
-      const adj = adjectives[opts.tone] || adjectives.cool;
-      let parts=[];
-      if(opts.length==="short"){ parts.push(random(pre)); parts.push(random(adj)); }
-      else if(opts.length==="medium"){ parts.push(random(pre)); parts.push(random(syllables)); parts.push(random(adj)); }
-      else { parts.push(random(pre)); parts.push(random(syllables)); parts.push(random(syllables)); parts.push(random(adj)); }
-      // clean and join
-      const name = parts.join('').replace(/\/|\\/g,'').replace(/\s+/g,'');
-      return name.charAt(0).toUpperCase()+name.slice(1);
-    }
-
-    function buildBio(theme,emojis){
-      let b = random(bios[theme] || bios.followers);
-      if(emojis==="yes") b += " " + random(["✨","🔥","😎","❤️","🌟"]);
-      return b;
-    }
-
-    // Ad + show result flow
-    function showAdThen(fnShow){
-      // Replace this with Monetag ad trigger:
-      // Example: window.open('about:blank','_blank'); then Monetag pops
-      // For the template we simulate a small delay and call the function.
-      // If you have Monetag snippet, ensure it triggers a popunder here.
-      // Example injection point: MONETAG_OPEN_CALL();
-
-      // If Monetag uses a function or snippet that opens a popunder, call it here.
-      // e.g. if Monetag provides window.Monetag.open(), call that.
-
-      // Simulation of ad open (replace with Monetag call)
-      try{
-        // attempt to call custom global Monetag function if present
-        if(window.Monetag && typeof window.Monetag.open==='function'){
-          window.Monetag.open();
-        } else {
-          // fallback: open small blank (some networks rely on user gesture)
-          const w = window.open('about:blank','_blank');
-          if(w) setTimeout(()=>w.close(),700);
-        }
-      }catch(e){ /* ignore */ }
-
-      // then small delay to show result
-      setTimeout(fnShow, 900);
-    }
-
-    // Name generator binding
-    document.getElementById('genName').addEventListener('click', function(){
-      const opts = {
-        category: document.getElementById('category').value,
-        tone: document.getElementById('tone').value,
-        length: document.getElementById('length').value
-      };
-      showAdThen(()=>{
-        const name = buildName(opts);
-        document.getElementById('nameText').textContent = name;
-        document.getElementById('nameResult').style.display = 'flex';
-      });
-    });
-
-    document.getElementById('genBio').addEventListener('click', function(){
-      const theme = document.getElementById('bioTheme').value;
-      const emojis = document.getElementById('bioEmojis').value;
-      showAdThen(()=>{
-        const b = buildBio(theme, emojis);
-        document.getElementById('bioText').textContent = b;
-        document.getElementById('bioResult').style.display = 'flex';
-      });
-    });
-
-    // Copy + share
-    function copyText(text){navigator.clipboard && navigator.clipboard.writeText(text).then(()=>alert('Copiado!'))}
-    document.getElementById('copyName').addEventListener('click', ()=>copyText(document.getElementById('nameText').textContent));
-    document.getElementById('copyBio').addEventListener('click', ()=>copyText(document.getElementById('bioText').textContent));
-    document.getElementById('shareName').addEventListener('click', ()=> {
-      const t = document.getElementById('nameText').textContent;
-      if(navigator.share){navigator.share({text:t, title:'Nome gerado'})}
-      else {alert('Usa copiar para partilhar.')}
-    });
-    document.getElementById('shareBio').addEventListener('click', ()=> {
-      const t = document.getElementById('bioText').textContent;
-      if(navigator.share){navigator.share({text:t, title:'Bio gerada'})}
-      else {alert('Usa copiar para partilhar.')}
-    });
   </script>
 </body>
 </html>

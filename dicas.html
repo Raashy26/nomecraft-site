@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicas de Conteúdo e Tendências | NomeCraft</title>
+  <meta name="description" content="Aprende truques e dicas para crescer no TikTok e redes sociais.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="gerador-nomes.html">Gerador de Nomes</a>
+        <a href="gerador-bios.html">Gerador de Bios</a>
+        <a href="dicas.html" class="active">Dicas</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+    </header>
+
+    <section class="hero card">
+      <h1>Dicas para Criadores de Conteúdo</h1>
+      <p>Aprende a crescer rápido no TikTok, Instagram e YouTube com truques simples!</p>
+    </section>
+
+    <section class="articles">
+      <article class="card">
+        <h2>🔥 Como escolher o nome perfeito</h2>
+        <p>Um nome fácil de lembrar é meio caminho andado para se tornar viral. Usa palavras curtas, sonoras e temáticas.</p>
+      </article>
+      <article class="card">
+        <h2>💡 Bio que atrai seguidores</h2>
+        <p>Mostra quem és em poucas palavras e dá um toque de humor ou mistério. Evita clichés!</p>
+      </article>
+      <article class="card">
+        <h2>📈 Horas certas para postar</h2>
+        <p>Experimenta horários diferentes, mas foca-te nas horas de pico (18h–22h). A consistência é o segredo.</p>
+      </article>
+    </section>
+
+    <section class="viral-tool card">
+      <h2>💬 Gerar Frase Viral</h2>
+      <p>Clica no botão para obter uma frase ou caption pronta para TikTok / redes sociais:</p>
+      <button id="genFrase" class="cta">Gerar Frase</button>
+      <div id="fraseResult" class="result"></div>
+    </section>
+
+    <section id="ads">
+      <iframe src="ads/monetag.html" loading="lazy"></iframe>
+    </section>
+
+    <footer>
+      © <span id="year"></span> NomeCraft. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    async function carregarFrases() {
+      const res = await fetch('data/frases.json');
+      const data = await res.json();
+      return data.captions || [];
+    }
+
+    async function gerarFrase() {
+      const frases = await carregarFrases();
+      if(frases.length === 0) return;
+
+      const randomIndex = Math.floor(Math.random() * frases.length);
+      const frase = frases[randomIndex];
+
+      const resultDiv = document.getElementById('fraseResult');
+      resultDiv.textContent = frase;
+      resultDiv.style.display = 'flex'; // consistência com CSS
+
+      // Aqui podes adicionar Monetag: showAdThen() ou Monetag.open()
+    }
+
+    document.getElementById('genFrase').addEventListener('click', gerarFrase);
+  </script>
+</body>
+</html>
